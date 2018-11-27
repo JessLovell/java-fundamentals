@@ -10,7 +10,7 @@ public class Main {
         System.out.println("pluralize: "+ pluralize(greeting, 1));
         System.out.println("pluralize: "+ pluralize(greeting, 2));
 
-        // flipNHeads(4);
+        flipNHeads(4);
         clock();
     }
 
@@ -53,20 +53,16 @@ public class Main {
     }
 
     public static void clock(){
-        int i = 0;
-        LocalDateTime now = LocalDateTime.now();
-        String time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
-        int second = now.getSecond();
-        int placeholder = second - 1;
+        int placeholder = 0;
         float loops = 0.0f;
 
-        while (i < 1){
-            now = LocalDateTime.now();
-            time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
-            second = now.getSecond();
+        while (true){
+            LocalDateTime now = LocalDateTime.now();
+            String time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+            int second = now.getSecond();
             
-            if (second - placeholder == 1 || second - placeholder == -59){
-                System.out.println(time +" "+ loops/1000000 + " MHz");
+            if (second != placeholder){
+                System.out.println(time +"  "+ loops/1000000 + " MHz");
                 placeholder = second;
                 loops = 0.0f;
             } 
