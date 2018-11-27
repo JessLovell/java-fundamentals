@@ -53,31 +53,24 @@ public class Main {
     }
 
     public static void clock(){
-        // LocalDateTime now = LocalDateTime.now();
-        // String time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
-        // int nanoSecond = now.getNano();
-  
-        // System.out.println(nanoSecond);
-        // System.out.println(now);
-        // System.out.println(time);
         int i = 0;
         LocalDateTime now = LocalDateTime.now();
         String time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
         int second = now.getSecond();
         int placeholder = second - 1;
+        float loops = 0.0f;
 
         while (i < 1){
             now = LocalDateTime.now();
             time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
             second = now.getSecond();
             
-            if (second - placeholder == 1){
-                // System.out.println(Second);
-                // System.out.println(now);
-                System.out.println(time);
+            if (second - placeholder == 1 || second - placeholder == -59){
+                System.out.println(time +" "+ loops/1000000 + " MHz");
                 placeholder = second;
-                
+                loops = 0.0f;
             } 
+            loops++;
         }
     }
 }
