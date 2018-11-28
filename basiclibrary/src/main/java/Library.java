@@ -21,10 +21,12 @@ public class Library {
 
     public static boolean containsDuplicates(int[] arr) {
 
-        for (int item : arr){
-            for (int i = 0; i < arr.length; i++){
-                if (item == arr[i]){
-                    return true;
+        for (int i = 0; i < arr.length; i++){
+            for (int j = 0; j < arr.length; j++){
+                if(i != j) {
+                    if (arr[i] == arr[j]) {
+                        return true;
+                    }
                 }
             }
         }

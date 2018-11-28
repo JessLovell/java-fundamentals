@@ -23,7 +23,7 @@ public class LibraryTest {
 
         assertTrue("duplicates test should return 'true'", Library.containsDuplicates(duplicates));
         assertTrue("duplicates test should return 'true'", Library.containsDuplicates(alsoDuplicates));
-//        assertFalse("duplicates test should return 'false'", Library.containsDuplicates(noDuplicates));
+        assertFalse("duplicates test should return 'false'", Library.containsDuplicates(noDuplicates));
     }
 
     @Test public void testCalculateAverage() {
@@ -44,6 +44,12 @@ public class LibraryTest {
                 {65, 56, 55, 52, 55, 62, 57}
         };
 
+        int[][] anotherOne = {
+                {10, 2, 3, 4, 5, 6, 7},
+                {0, 2, 5, 6, 7, 8, 0}
+        };
+
+        assertEquals("calculateArrAverage should return 4, ", 4, Library.calculateArrAverage(anotherOne));
         assertEquals("calculateArrAverage should return 57", 57, Library.calculateArrAverage(temps));
     }
 }
