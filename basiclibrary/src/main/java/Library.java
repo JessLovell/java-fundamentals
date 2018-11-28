@@ -15,7 +15,6 @@ public class Library {
         for (int i = 0; i < rolls; i++){
             arr[i] = rand.nextInt(6) + 1;
         }
-        System.out.println(Arrays.toString(arr));
         return arr;
     }
 
