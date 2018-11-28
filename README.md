@@ -1,3 +1,3 @@
 # java-fundamentals
 Basics: Java methods and while loops
-Basic Library: Creating tests to ensure methods are working
+Basic Library: Creating tests to ensure methods are working. Fix the last method

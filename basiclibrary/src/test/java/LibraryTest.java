@@ -44,12 +44,15 @@ public class LibraryTest {
                 {65, 56, 55, 52, 55, 62, 57}
         };
 
+        int[] tempsExpected = {55, 54, 60, 53, 59, 57, 61};
+
         int[][] anotherOne = {
                 {10, 2, 3, 4, 5, 6, 7},
                 {0, 2, 5, 6, 7, 8, 0}
         };
+        int[] anotherExpected = {0, 2, 5, 6, 7, 8, 0};
 
-        assertEquals("calculateArrAverage should return 4, ", 4, Library.calculateArrAverage(anotherOne));
-        assertEquals("calculateArrAverage should return 57", 57, Library.calculateArrAverage(temps));
+        assertArrayEquals("calculateArrAverage expected: {0, 2, 5, 6, 7, 8, 0}", anotherExpected, Library.calculateArrAverage(anotherOne));
+        assertArrayEquals("calculateArrAverage expected:{55, 54, 60, 53, 59, 57, 61}", tempsExpected, Library.calculateArrAverage(temps));
     }
 }
