@@ -41,9 +41,16 @@ public class Library {
     }
 
     public static int calculateArrAverage(int[][] arr){
-        int lowest = 0;
+
+        int lowest = calculateAverage(arr[0]);
+        int average = 0;
+
         for (int[] item : arr){
-            
+            average = calculateAverage(item);
+            if (average < lowest) {
+                lowest = average;
+            }
         }
+        return lowest;
     }
 }
