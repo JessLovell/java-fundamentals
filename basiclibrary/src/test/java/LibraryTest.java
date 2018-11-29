@@ -55,4 +55,7 @@ public class LibraryTest {
         assertArrayEquals("calculateArrAverage expected: {0, 2, 5, 6, 7, 8, 0}", anotherExpected, Library.calculateArrAverage(anotherOne));
         assertArrayEquals("calculateArrAverage expected:{55, 54, 60, 53, 59, 57, 61}", tempsExpected, Library.calculateArrAverage(temps));
     }
+
+    @Test public void testWeatherData() {
+    }
 }
