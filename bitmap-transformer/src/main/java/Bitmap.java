@@ -5,13 +5,13 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 
-public class Filter {
+public class Bitmap {
     private String input;
     private String output;
     private String transform;
     BufferedImage img = null;
 
-    public Filter (String input, String output, String transform) {
+    public Bitmap(String input, String output, String transform) {
         this.input = input;
         this.output = output;
         this.transform = transform;
