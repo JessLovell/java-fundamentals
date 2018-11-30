@@ -16,8 +16,5 @@ public class App {
         for (String arg : args) {
             System.out.println("\t" + arg);
         }
-
     }
-
-
 }
