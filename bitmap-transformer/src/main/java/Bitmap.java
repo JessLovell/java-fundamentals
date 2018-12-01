@@ -6,29 +6,47 @@ import java.io.IOException;
 import java.nio.file.Path;
 
 public class Bitmap {
-    private String input;
-    private String output;
+    private Path imagePath;
+    private Path outputPath;
     private String transform;
     private BufferedImage imageData;
     BufferedImage img = null;
 
-    public Bitmap (String input, String output, String transform) {
-        this.input = input;
-        this.output = output;
+    public Bitmap (Path imagePath, Path output, String transform) {
+        this.imagePath = imagePath;
+        this.outputPath = output;
         this.transform = transform;
 
         try {
-            img = ImageIO.read(new File(input));
+            img = ImageIO.read(imagePath.toFile());
             this.imageData = img;
         } catch (IOException e) {
         }
     }
 
-    public boolean save (String savePath) {
-        try {
-            ImageIO.write(NEEDS_TO_GO_IN_HERE);
-        } catch (IOException e){
+    public void greyscale() {
+        //logic on isntance variable
+        //take each row
+        //add number to make it into the grey color scheme
+    }
+
+    // This function will flip the image horizontally!
+    public void flipHorizontally() {
+
+        for (int x = 0; x < this.imageData.getWidth(); x++) {
+            for (int y = 0; y < this.imageData.getHeight() / 2; y++) {
+                int placeholder = this.imageData.getRGB(x, y);
+                this.imageData.setRGB(x, y, this.imageData.getRGB(x, this.imageData.getHeight() - y - 1));
+                this.imageData.setRGB(x, this.imageData.getHeight() - y - 1, placeholder);
+            }
         }
     }
 
+    public boolean save() {
+        try {
+            return ImageIO.write(imageData, "bmp", outputPath.toFile());
+        } catch (IOException e){
+        }
+        return false;
+    }
 }

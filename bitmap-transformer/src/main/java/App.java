@@ -8,13 +8,20 @@ public class App {
 
     public static void main(String[] args) {
 
-        String imagePath = "resources/smiley.bmp";
-        String output = "resources/smiley_after.bmp";
-//        Path imagePath = FileSystems.getDefault().getPath("resources", "smiley.bmp");
-        Bitmap image = new Bitmap(imagePath, output, args[2]);
-
         for (String arg : args) {
             System.out.println("\t" + arg);
         }
+        //find a bitmap
+        Path imagePath = FileSystems.getDefault().getPath("resources", "smiley.bmp");
+        Path output = FileSystems.getDefault().getPath("resources", "smiley_after.bmp");
+
+        //read the image
+        Bitmap image = new Bitmap(imagePath, output, "something");
+
+        //mess with the image
+        image.flipHorizontally();
+
+        //output the file
+        image.save();
     }
 }
