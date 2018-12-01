@@ -13,13 +13,14 @@ public class App {
         }
         //find a bitmap
         Path imagePath = FileSystems.getDefault().getPath("resources", "smiley.bmp");
-        Path output = FileSystems.getDefault().getPath("resources", "smiley_after.bmp");
+        Path output = FileSystems.getDefault().getPath("resources", "smiley_vertical.bmp");
 
         //read the image
         Bitmap image = new Bitmap(imagePath, output, "something");
 
         //mess with the image
-        image.flipHorizontally();
+//        image.flipHorizontally();
+        image.flipVertically();
 
         //output the file
         image.save();

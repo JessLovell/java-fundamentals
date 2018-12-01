@@ -42,6 +42,20 @@ public class Bitmap {
         }
     }
 
+    public void flipVertically() {
+
+        System.out.println(this.imageData.getWidth());
+        System.out.println(this.imageData.getHeight());
+
+        for (int i = 0; i < this.imageData.getHeight(); i++){
+            for (int j = 0; j < this.imageData.getWidth()/2; j++){
+                int placeholder = this.imageData.getRGB(j, j);
+                this.imageData.setRGB(j, j, this.imageData.getRGB(j, this.imageData.getWidth() - j - 1));
+                this.imageData.setRGB(j, this.imageData.getWidth() - j - 1, placeholder);
+            }
+        }
+    }
+
     public boolean save() {
         try {
             return ImageIO.write(imageData, "bmp", outputPath.toFile());
