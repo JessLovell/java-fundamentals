@@ -12,15 +12,17 @@ public class App {
             System.out.println("\t" + arg);
         }
         //find a bitmap
-        Path imagePath = FileSystems.getDefault().getPath("resources", "smiley.bmp");
-        Path output = FileSystems.getDefault().getPath("resources", "smiley_vertical.bmp");
+        Path imagePath = FileSystems.getDefault().getPath("resources", "MARBLES.bmp");
+        Path output = FileSystems.getDefault().getPath("resources", "smiley_after.bmp");
 
         //read the image
         Bitmap image = new Bitmap(imagePath, output, "something");
 
         //mess with the image
 //        image.flipHorizontally();
-        image.flipVertically();
+//        image.flipVertically();
+//        image.invert();
+        image.bluescale();
 
         //output the file
         image.save();

@@ -24,34 +24,44 @@ public class Bitmap {
         }
     }
 
-    public void greyscale() {
-        //logic on isntance variable
-        //take each row
-        //add number to make it into the grey color scheme
+    public void bluescale() {
+        for (int i = 0; i < this.imageData.getWidth(); i++){
+            for (int j = 0; j < this.imageData.getHeight(); j++){
+                Color color = new Color(imageData.getRGB(i, j));
+                int avg = color.getRed() + color.getGreen() + color.getBlue() *4;
+                this.imageData.setRGB(i, j, avg);
+            }
+        }
     }
 
     // This function will flip the image horizontally!
     public void flipHorizontally() {
 
-        for (int x = 0; x < this.imageData.getWidth(); x++) {
-            for (int y = 0; y < this.imageData.getHeight() / 2; y++) {
-                int placeholder = this.imageData.getRGB(x, y);
-                this.imageData.setRGB(x, y, this.imageData.getRGB(x, this.imageData.getHeight() - y - 1));
-                this.imageData.setRGB(x, this.imageData.getHeight() - y - 1, placeholder);
+        for (int i = 0; i < this.imageData.getWidth(); i++) {
+            for (int j = 0; j < this.imageData.getHeight() / 2; j++) {
+                int placeholder = this.imageData.getRGB(i, j);
+                this.imageData.setRGB(i, j, this.imageData.getRGB(i, this.imageData.getHeight() - j - 1));
+                this.imageData.setRGB(i, this.imageData.getHeight() - j - 1, placeholder);
             }
         }
     }
 
     public void flipVertically() {
 
-        System.out.println(this.imageData.getWidth());
-        System.out.println(this.imageData.getHeight());
-
         for (int i = 0; i < this.imageData.getHeight(); i++){
-            for (int j = 0; j < this.imageData.getWidth()/2; j++){
-                int placeholder = this.imageData.getRGB(j, j);
-                this.imageData.setRGB(j, j, this.imageData.getRGB(j, this.imageData.getWidth() - j - 1));
-                this.imageData.setRGB(j, this.imageData.getWidth() - j - 1, placeholder);
+            for (int j = 0; j < this.imageData.getWidth() / 2; j++){
+                int placeholder = this.imageData.getRGB(j, i);
+                this.imageData.setRGB(j, i, this.imageData.getRGB(this.imageData.getWidth() - j - 1, i));
+                this.imageData.setRGB(this.imageData.getWidth() - j - 1, i, placeholder);
+            }
+        }
+    }
+
+    public void invert(){
+        for (int i = 0; i < this.imageData.getHeight(); i++){
+            for (int j = 0; j < this.imageData.getWidth(); j++){
+                int invert = 0xFFFFFF - this.imageData.getRGB(j, i);
+                this.imageData.setRGB(j, i, invert);
             }
         }
     }
