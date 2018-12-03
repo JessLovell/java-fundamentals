@@ -11,42 +11,29 @@ import java.nio.file.Paths;
 public class App {
     public static void main(String[] args) {
 
-        Path gates  = Paths.get("resources/gates.js");
-        Path empty  = Paths.get("resources/empty.js");
-        Path fewErrors  = Paths.get("resources/fewErrors.js");
-        Path manyErrors  = Paths.get("resources/manyErrors.js");
-        Path noError  = Paths.get("resources/noError.js");
-        Path oneError  = Paths.get("resources/oneError.js");
-
-        linter(fewErrors);
-
     }
 
-    public static void linter(Path file) {
+    public static int linter(Path file) {
 
+        int counter = 0;
         Charset charset = Charset.forName("UTF-8");
         try (BufferedReader reader = Files.newBufferedReader(file, charset)){
             String line = "";
             int lineNum = 0;
-            int counter = 0;
             while(line != null) {
-                if (!line.isEmpty() &&
-                        !line.endsWith("{") &&
-                        !line.endsWith("}") &&
-                        !line.contains("if") &&
-                        !line.contains("else") &&
-                        !line.contains("//") &&
-                        !line.contains(";")){
+                if (!line.isEmpty() && !line.endsWith("{") && !line.endsWith("}") &&
+                        !line.contains("if") && !line.contains("else") &&
+                        !line.contains("//") && !line.contains(";")) {
                     System.out.println("Line " + lineNum + ": Missing semicolon.");
                     counter++;
                 }
                 lineNum++;
                 line = reader.readLine();
             }
-            System.out.println("Errors " + counter);
         }
         catch (IOException x) {
             System.err.format("IOException: %s%n", x);
         }
+        return counter;
     }
 }
