@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.Random;
 
 public class Bitmap {
     private Path imagePath;
@@ -25,17 +26,16 @@ public class Bitmap {
     }
 
     public void bluescale() {
+    }
+
+    public void randomize() {
         for (int i = 0; i < this.imageData.getHeight(); i++) {
             for (int j = 0; j < this.imageData.getWidth(); j++){
-                for (int k = 0; k < this.imageData.getWidth() - j; k++) {
-                    int a = this.imageData.getRGB(k, i);
-                    int b = this.imageData.getRGB(k + 1, i );
-//                    System.out.println(i+" "+j+" "+k+" "+ a +" "+b);
-                    if (this.imageData.getRGB(i, k) > this.imageData.getRGB(k + 1, i )){
-                        this.imageData.setRGB(i, k, this.imageData.getRGB(i, k + 1));
-                        this.imageData.setRGB(i, k + 1,  this.imageData.getRGB(i, k));
-                    }
-                }
+                Random rand = new Random();
+                int newX = rand.nextInt(this.imageData.getHeight() - 1);
+                int newY = rand.nextInt(this.imageData.getWidth() -1);
+                int newRGB = this.imageData.getRGB(newY, newX);
+                this.imageData.setRGB(j ,i, newRGB);
             }
         }
     }

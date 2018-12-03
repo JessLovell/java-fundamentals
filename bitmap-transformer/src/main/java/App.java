@@ -22,7 +22,8 @@ public class App {
 //        image.flipHorizontally();
 //        image.flipVertically();
 //        image.invert();
-        image.bluescale();
+//        image.bluescale();
+        image.randomize();
 
         //output the file
         image.save();
