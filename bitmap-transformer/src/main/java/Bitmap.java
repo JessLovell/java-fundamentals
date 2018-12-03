@@ -25,9 +25,6 @@ public class Bitmap {
         }
     }
 
-    public void bluescale() {
-    }
-
     public void randomize() {
         for (int i = 0; i < this.imageData.getHeight(); i++) {
             for (int j = 0; j < this.imageData.getWidth(); j++){
