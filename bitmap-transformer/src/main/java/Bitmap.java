@@ -25,11 +25,17 @@ public class Bitmap {
     }
 
     public void bluescale() {
-        for (int i = 0; i < this.imageData.getWidth(); i++){
-            for (int j = 0; j < this.imageData.getHeight(); j++){
-                Color color = new Color(imageData.getRGB(i, j));
-                int avg = color.getRed() + color.getGreen() + color.getBlue() *4;
-                this.imageData.setRGB(i, j, avg);
+        for (int i = 0; i < this.imageData.getHeight(); i++) {
+            for (int j = 0; j < this.imageData.getWidth(); j++){
+                for (int k = 0; k < this.imageData.getWidth() - j; k++) {
+//                    int a = this.imageData.getRGB(k, i);
+//                    int b = this.imageData.getRGB(k + 1, i );
+//                    System.out.println(i+" "+j+" "+k+" "+ a +" "+b);
+                    if (this.imageData.getRGB(i, k) > this.imageData.getRGB(k + 1, i )){
+                        this.imageData.setRGB(i, k, this.imageData.getRGB(i, k + 1));
+                        this.imageData.setRGB(i, k + 1,  this.imageData.getRGB(i, k));
+                    }
+                }
             }
         }
     }
