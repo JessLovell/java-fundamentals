@@ -12,7 +12,7 @@ public class App {
             System.out.println("\t" + arg);
         }
         //find a bitmap
-        Path imagePath = FileSystems.getDefault().getPath("resources", "smiley.bmp");
+        Path imagePath = FileSystems.getDefault().getPath("resources", "test.bmp");
         Path output = FileSystems.getDefault().getPath("resources", "smiley_after.bmp");
 
         //read the image
