@@ -9,36 +9,87 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class RestaurantTest {
+
+    //these two test will test methods in the Review class
+    @Test public void testReviewToString(){
+        Review oneReview = new Review("It's alright.", "Jessica", 3);
+        Review twoReview = new Review("", "", 2);
+
+        assertEquals("Jessica rated this restaurant with 3 stars\n Review: 'It's alright.'", oneReview.toString());
+        assertEquals(" rated this restaurant with 2 stars\n Review: ''", twoReview.toString());
+    }
+
+    @Test public void testReviewGetStars(){
+
+        Review oneReview = new Review("It's alright.", "Jessica", 3);
+        Review twoReview = new Review("", "", 2);
+
+        assertEquals(3, oneReview.getStars());
+        assertNotEquals(0,oneReview.getStars());
+        assertEquals(2, twoReview.getStars());
+    }
+
+    //The following tests will test the methods in Restaurants
     @Test public void testToString() {
 
+       Restaurant oneRest = new Restaurant("Blue Moon", "$$$");
+       Restaurant twoRest = new Restaurant("Oddfellows", "$$");
 
-        //Create a review
+       assertEquals("Blue Moon is rated 0 and priced at $$$", oneRest.toString());
+       assertEquals("Oddfellows is rated 0 and priced at $$", twoRest.toString());
+       assertTrue((oneRest.toString()).contains("Blue Moon"));
+       assertTrue((twoRest.toString()).contains("Oddfellows"));
+    }
+
+    //This test will test both addReview and getReview methods
+    @Test public void testAddGetReview() {
+
+        Restaurant oneRest = new Restaurant("Blue Moon", "$$$");
         Review oneReview = new Review("It's alright.", "Jessica", 3);
+        Review twoReview = new Review ("My favorite place to be be!", "Igor", 5);
+        oneRest.addReview(oneReview);
+        oneRest.addReview(twoReview);
 
-        //add review to list
-        List<Review> reviews = new LinkedList<>();
-        reviews.add(oneReview);
+        Restaurant twoRest = new Restaurant("Oddfellows", "$$");
+        Review threeRev = new Review("Hi", "me", 0);
+        Review fourRev = new Review("", "", 4);
+        twoRest.addReview(threeRev);
+        twoRest.addReview(fourRev);
 
-        //update reviews
-        Restaurant one = new Restaurant("Applebees", 3, "$$");
-
-        assertEquals("Applebees is rated 3 and priced at $$", one.toString());
+        oneRest.getReviews();
+        System.out.println(oneRest.toString());
     }
 
-    @Test public void testReviewToString() {
-//        assertEquals("Jessica rated this restaurant 3 stars\n Review: 'It's alright.'", one.toString());
-    }
+    @Test public void testUpdateStars() {
 
-    @Test public void testAddReview() {
+        Restaurant oneRest = new Restaurant("Blue Moon", "$$$");
+        Restaurant twoRest = new Restaurant("Oddfellows", "$$");
 
-        Restaurant one = new Restaurant("Applebees", 3, "$$");
+        //test inital stars
+        assertEquals(0, oneRest.stars);
+        assertEquals(0, twoRest.stars);
 
         Review oneReview = new Review("It's alright.", "Jessica", 3);
         Review twoReview = new Review ("My favorite place to be be!", "Igor", 5);
-        one.addReview(oneReview);
-        one.addReview(twoReview);
+        oneRest.addReview(oneReview);
+        oneRest.addReview(twoReview);
 
-        one.getReviews();
-        System.out.println(one.toString());
+        Review threeRev = new Review("Hi", "me", 0);
+        Review fourRev = new Review("", "", 4);
+        twoRest.addReview(threeRev);
+        twoRest.addReview(fourRev);
+
+        //test for stars
+        assertTrue(oneRest.stars == 4);
+        assertEquals(4, oneRest.stars);
+        assertTrue(twoRest.stars == 2);
+        assertEquals(2, twoRest.stars);
+
+        oneRest.addReview(threeRev);
+        twoRest.addReview(oneReview);
+
+        //test for stars update
+        assertEquals(2, oneRest.stars);
+        assertEquals(2, twoRest.stars);
     }
 }

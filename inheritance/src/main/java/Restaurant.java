@@ -7,7 +7,7 @@ import java.util.List;
 public class Restaurant {
 
     private String name;
-    private int stars;
+    protected int stars;
     private String price;
     private List<Review> reviews;
 

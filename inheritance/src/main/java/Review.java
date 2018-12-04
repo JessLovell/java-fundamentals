@@ -16,5 +16,4 @@ public class Review {
     public int getStars(){
         return this.reviewStars;
     }
-
 }
