@@ -6,10 +6,10 @@ import java.util.List;
  */
 public class Restaurant {
 
-    private String name;
+    protected String name;
     protected int stars;
-    private String price;
-    private List<Review> reviews;
+    protected String price;
+    protected List<Review> reviews;
 
     public Restaurant (String name, String price) {
         this.name = name;
