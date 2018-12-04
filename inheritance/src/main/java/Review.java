@@ -10,7 +10,11 @@ public class Review {
     }
 
     public String toString() {
-        return this.author + " rated this restaurant " + this.reviewStars + " stars\n Review: '" + this.body + "'";
+        return this.author + " rated this restaurant with " + this.reviewStars + " stars\n Review: '" + this.body + "'";
+    }
+
+    public int getStars(){
+        return this.reviewStars;
     }
 
 }
