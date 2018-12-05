@@ -7,7 +7,7 @@
 - Linter: A method to read missing ";" in java code. 
 
 ## Week 2
-- Inheritance: Creating and linking classes together using interfaces or superclasses
+- [Inheritance:](./inheritance/README.md) Creating and linking classes together using interfaces or superclasses
  - [thingToReview class](./inheritance/README.md#thingToReview)
  - [Review object](./inheritance/README.md#Review)
  - [Restaurant object](./inheritance/README.md#Restaurant)
