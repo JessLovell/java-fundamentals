@@ -89,6 +89,7 @@ public class LibraryTest {
         };
         Library.weatherData(temps);
         assertEquals("", outContent.toString());
+        
     }
 
     @Test public void testTally() {
