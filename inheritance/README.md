@@ -1,6 +1,34 @@
 # Inheritance
 A foray into inheritance. This package contains classes for `Reviews`, `Restaurants`, `Shops`, and `Theaters`.
 
+## Nice-to-know Project Things
+- To run the tests use command `./gradlew test` in the test folder
+- Project structure:
+.
+├── README.md
+├── build.gradle
+├── gradle---  ...
+├── gradlew
+├── gradlew.bat
+├── inheritance.iml
+├── out---  ...
+├── settings.gradle
+└── src
+    ├── main
+    │   └── java
+    │       ├── Restaurant.java
+    │       ├── Review.java
+    │       ├── Shop.java
+    │       ├── Theater.java
+    │       └── thingToReview.java
+    └── test
+        └── java
+            ├── RestaurantTest.java
+            ├── ReviewTest.java
+            ├── ShopTest.java
+            └── TheaterTest.java
+   
+
 ## <a name="thingToReview"></a>thingToReview Interface
 This outlines that anything that is reviewed needs a `.addReview(Review newReview)` method and a `.toString()` method.
 [Code](../src/main/java/thingToReview.java)
