@@ -17,9 +17,6 @@ public class TheaterTest {
         assertTrue("expect to have 'The Grinch'", (oneTheater.toString()).contains("The Grinch"));
     }
 
-    @Test public void testAddReview() {
-    }
-
     @Test public void testaddMovie() {
 
         Theater oneTheater = new Theater("Cinerama");
@@ -51,5 +48,22 @@ public class TheaterTest {
         assertFalse("expect The Grinch to be removed", (oneTheater.nowPlaying).contains("The Grinch"));
         assertFalse("expect False because 'The Grinch' is removed", oneTheater.removeMovie("The Grinch"));
         assertEquals("expect Die Hard and 5th Avenue in NowPlaying", "[5th Avenue, Die Hard]", (oneTheater.nowPlaying).toString());
+    }
+
+    //Test both instances of addReview
+    @Test public void testAddReview() {
+
+        Theater oneTheater = new Theater("Cinerama");
+        assertEquals("Expect reviews to be empty", null, oneTheater.reviews);
+
+        Review oneReview = new Review("Best popcorn!", "Jessica", 3);
+        oneTheater.addReview(oneReview);
+        assertEquals("Expect to have 1 thing in reviews", 1, oneTheater.reviews.size());
+        assertTrue("Expect to contain 'Jessica'", (oneTheater.reviews.toString()).contains("Jessica"));
+
+        Review twoReview = new Review("Don't watch. The dog dies at the end", "Chad", 5);
+        oneTheater.addReview(twoReview, "Old Yeller");
+        assertEquals("Expect to have 2 things in reviews", 2, oneTheater.reviews.size());
+        assertTrue("Expect to contain 'Old Yeller'", (oneTheater.reviews.toString()).contains("Old Yeller"));
     }
 }

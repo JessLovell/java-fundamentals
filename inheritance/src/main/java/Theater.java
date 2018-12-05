@@ -30,13 +30,19 @@ public class Theater implements thingToReview{
 
         //check if the list is empty
         if (this.reviews == null) {
-            List<Review> movie = new LinkedList<>();
-            movie.add(newReview);
-            this.reviews = movie;
+            List<Review> movieList = new LinkedList<>();
+            movieList.add(newReview);
+            this.reviews = movieList;
         } else {
             this.reviews.add(newReview);
         }
         newReview.business = this;
+    }
+
+    //This review adds a review about a specifc movie
+    public void addReview(Review newReview, String movie){
+        addReview(newReview);
+        newReview.tag = movie; //adds the movie as a tag to the review
     }
 
     //this method adds a movie to the nowPlaying list

@@ -15,11 +15,12 @@ Method |Description
 `.updateStars()` | This method updates the star rating for a restaurant.
 
 ## Review Class
-The Review class takes in the author, body, and star rating of a review. The constructor contains these as `String name`, `String body`, `int stars`.
+The Review class takes in the author, body, and star rating of a review. The constructor contains these as `String name`, `String body`, `int stars`, and `Object business`.
 [Code](../src/main/java/Review.java) | [Tests](../src/test/java/RestaurantTest.java)
 
 To create a new Review, the code will look like:
 `Review bestReview = new Review("Author", "description", starRating);`
+
 ### Methods
 Method |Description
 ----| ----
