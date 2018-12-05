@@ -11,6 +11,24 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class LibraryTest {
+
+    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
+    private final PrintStream originalOut = System.out;
+    private final PrintStream originalErr = System.err;
+
+    @Before
+    public void setUpStreams() {
+        System.setOut(new PrintStream(outContent));
+        System.setErr(new PrintStream(errContent));
+    }
+
+    @After
+    public void restoreStreams() {
+        System.setOut(originalOut);
+        System.setErr(originalErr);
+    }
+
     @Test public void testSomeLibraryMethod() {
         Library classUnderTest = new Library();
         assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
@@ -63,17 +81,14 @@ public class LibraryTest {
     }
 
     @Test public void testWeatherData() {
-//        String expectedResponse = "";
-//
-//        private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-//        private final PrintStream originalOut = System.out;
-//        System.setOut(new PrintStream(outContent));
-//        Library.weatherData();
-//        assertTrue("", outContent.toString() == expectedoutput);
-//        System.setOut(originalOut);
-//        System.out.println(outContent.toString());
-
-
+        int[][] temps = {
+                {66, 64, 58, 65, 71, 57, 60},
+                {57, 65, 65, 70, 72, 65, 51},
+                {55, 54, 60, 53, 59, 57, 61},
+                {65, 56, 55, 52, 55, 62, 57}
+        };
+        Library.weatherData(temps);
+        assertEquals("", outContent.toString());
     }
 
     @Test public void testTally() {
