@@ -3,8 +3,8 @@ A foray into inheritance. This package contains classes for `Reviews`, `Restaura
 
 ## Nice-to-know Project Things
 - To run the tests use command `./gradlew test` in the test folder
-- Project structure:
-.
+- Project structure:  
+.  
 ├── README.md  
 ├── build.gradle  
 ├── gradle---  ...  
