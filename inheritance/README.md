@@ -27,7 +27,7 @@ A foray into inheritance. This package contains classes for `Reviews`, `Restaura
             ├── ReviewTest.java
             ├── ShopTest.java
             └── TheaterTest.java
-   
+
 
 ## <a name="thingToReview"></a>thingToReview Interface
 This outlines that anything that is reviewed needs a `.addReview(Review newReview)` method and a `.toString()` method.
