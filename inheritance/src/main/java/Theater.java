@@ -1,10 +1,12 @@
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 public class Theater implements thingToReview{
 
     protected String name;
-    protected List<String> nowPlaying;
+    protected Set<String> nowPlaying;
     protected List<Review> reviews;
 
     public Theater(String name){
@@ -42,11 +44,20 @@ public class Theater implements thingToReview{
 
         //check if the list is empty
         if(this.nowPlaying == null) {
-            List<String> movieList = new LinkedList<>();
+            Set<String> movieList = new HashSet<>();
             movieList.add(movie);
             this.nowPlaying = movieList;
         } else {
             this.nowPlaying.add(movie);
         }
+    }
+
+    //this method returns true if a movie is removed from nowPlaying list and returns false if the movie is not in the set
+    public boolean removeMovie(String movie){
+
+        if (this.nowPlaying != null) {
+            return this.nowPlaying.remove(movie);
+        }
+        return false;
     }
 }
