@@ -36,4 +36,17 @@ public class Theater implements thingToReview{
         }
         newReview.business = this;
     }
+
+    //this method adds a movie to the nowPlaying list
+    public void addMovie(String movie) {
+
+        //check if the list is empty
+        if(this.nowPlaying == null) {
+            List<String> movieList = new LinkedList<>();
+            movieList.add(movie);
+            this.nowPlaying = movieList;
+        } else {
+            this.nowPlaying.add(movie);
+        }
+    }
 }
