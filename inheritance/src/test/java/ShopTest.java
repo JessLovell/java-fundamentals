@@ -30,6 +30,4 @@ public class ShopTest {
 
         assertEquals("Reviews list has 2 things", 2, (oneShop.reviews).size());
     }
-
-
 }

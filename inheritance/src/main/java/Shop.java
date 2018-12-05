@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Shop {
+public class Shop implements thingToReview{
     protected String name;
     protected String description;
     protected String price;

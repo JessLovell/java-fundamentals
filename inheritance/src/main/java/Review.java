@@ -12,7 +12,7 @@ public class Review {
     }
 
     public String toString() {
-        return this.author + " rated "+ this.parentObject +" with " + this.reviewStars + " stars\n Review: '" + this.body + "'";
+        return this.author + " rated this with " + this.reviewStars + " stars\n Review: '" + this.body + "'";
     }
 
     public int getStars(){
