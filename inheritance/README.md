@@ -3,6 +3,9 @@
 The Restaurant class takes in a restaurant name and price average. The constructor contains the `String name`, `String price`, `int stars`, `List reviews`.
 [Code](../src/main/java/Restaurant.java) | [Tests](../src/test/java/RestaurantTest.java)
 
+To create a new Restaurant, the code will look like:
+`Restaurant oneRestaurant = new Restaurant("Name", "$$$");`
+
 ### Methods
 Method |Description
 ----| ----
@@ -15,8 +18,10 @@ Method |Description
 The Review class takes in the author, body, and star rating of a review. The constructor contains these as `String name`, `String body`, `int stars`.
 [Code](../src/main/java/Review.java) | [Tests](../src/test/java/RestaurantTest.java)
 
+To create a new Review, the code will look like:
+`Review bestReview = new Review("Author", "description", starRating);`
 ### Methods
 Method |Description
 ----| ----
-`.getStars()` | Reviews | This method will get the reviewed star rating for a specific review.
-`.toString()` | Reviews | This method will print out the author, body, and star rating for a specific review.
+`.getStars()` | This method will get the reviewed star rating for a specific review.
+`.toString()` | This method will print out the author, body, and star rating for a specific review.
