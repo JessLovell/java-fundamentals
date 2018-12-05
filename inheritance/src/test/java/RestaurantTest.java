@@ -31,26 +31,6 @@ public class RestaurantTest {
         System.setErr(originalErr);
     }
 
-    //these two test will test methods in the Review class
-    @Test public void testReviewToString(){
-        Review oneReview = new Review("It's alright.", "Jessica", 3);
-        Review twoReview = new Review("", "", 2);
-
-        assertEquals("Jessica rated this restaurant with 3 stars\n Review: 'It's alright.'", oneReview.toString());
-        assertEquals(" rated this restaurant with 2 stars\n Review: ''", twoReview.toString());
-    }
-
-    @Test public void testReviewGetStars(){
-
-        Review oneReview = new Review("It's alright.", "Jessica", 3);
-        Review twoReview = new Review("", "", 2);
-
-        assertEquals(3, oneReview.getStars());
-        assertNotEquals(0,oneReview.getStars());
-        assertEquals(2, twoReview.getStars());
-    }
-
-    //The following tests will test the methods in Restaurants
     @Test public void testToString() {
 
        Restaurant oneRest = new Restaurant("Blue Moon", "$$$");

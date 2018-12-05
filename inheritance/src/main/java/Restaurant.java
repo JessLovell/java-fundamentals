@@ -4,7 +4,7 @@ import java.util.List;
 /*
  *
  */
-public class Restaurant {
+public class Restaurant implements thingToReview {
 
     protected String name;
     protected int stars;
@@ -24,6 +24,7 @@ public class Restaurant {
         return this.name + " is rated " + this.stars + " and priced at " + this.price;
     }
 
+
     //This method creates a new review and adds it to the list of reviews
     public void addReview(Review newReview) {
 
@@ -35,6 +36,7 @@ public class Restaurant {
         } else {
             this.reviews.add(newReview);
         }
+        newReview.business = this; //tie review to restaurant
         updateStars();
     }
 
