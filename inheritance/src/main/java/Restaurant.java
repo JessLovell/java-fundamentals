@@ -35,6 +35,7 @@ public class Restaurant {
         } else {
             this.reviews.add(newReview);
         }
+        newReview.parentObject = this; //tie review to restaurant
         updateStars();
     }
 
