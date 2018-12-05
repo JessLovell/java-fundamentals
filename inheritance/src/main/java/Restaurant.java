@@ -36,7 +36,7 @@ public class Restaurant implements thingToReview {
         } else {
             this.reviews.add(newReview);
         }
-        newReview.parentObject = this; //tie review to restaurant
+        newReview.business = this; //tie review to restaurant
         updateStars();
     }
 

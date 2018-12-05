@@ -33,6 +33,6 @@ public class Shop implements thingToReview{
         } else {
             this.reviews.add(newReview);
         }
-        newReview.parentObject = this; //tie the review to this instance of shop
+        newReview.business = this; //tie the review to this instance of shop
     }
 }

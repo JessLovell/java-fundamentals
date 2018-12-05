@@ -2,13 +2,13 @@ public class Review {
     private String body;
     private String author;
     private int reviewStars;
-    protected Object parentObject;
+    protected Object business;
 
     public Review (String body, String author, int reviewStars){
         this.body = body;
         this.author = author;
         this.reviewStars = reviewStars;
-        this.parentObject = null;
+        this.business = null;
     }
 
     public String toString() {
