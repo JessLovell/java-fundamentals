@@ -38,7 +38,7 @@ This outlines that anything that is reviewed needs a `.addReview(Review newRevie
 The Review class implements the `thingToReview` interface and takes in the author, body, and star rating of a review. The constructor contains these as `String name`, `String body`, `int stars`, `Object business`, and `String tag`.
 To create a new Review, the code will look like:
 `Review bestReview = new Review("Author", "description", starRating);`
-[Code](../src/main/java/Review.java) | [Tests](./src/test/java/ReviewTest.java)
+[Code](./src/main/java/Review.java) | [Tests](./src/test/java/ReviewTest.java)
 
 
 ### Methods
@@ -52,7 +52,7 @@ Method |Description
 The Restaurant class implements the `thingToReview` interface and takes in a restaurant name and price average. The constructor contains the `String name`, `String price`, `int stars`, `List reviews`.
 To create a new Restaurant, the code will look like:
 `Restaurant oneRestaurant = new Restaurant(String name, String priceInDollar$);`
-[Code](../src/main/java/Restaurant.java) | [Tests](./src/test/java/RestaurantTest.java)
+[Code](./src/main/java/Restaurant.java) | [Tests](./src/test/java/RestaurantTest.java)
 
 
 ### Methods
@@ -67,7 +67,7 @@ Method |Description
 ## <a name="Shop"></a>Shop Class
 The Shop class implements the `thingToReview` interface and takes in a name, description, and average dollar price. The constructor contains the `String name`, `String description`, `String priceInDollar$`, `List reviews`
 `Shop newShop = new Shop (String name, String description, String priceInDollar$);`
-[Code](../src/main/java/Shop.java)  | [Tests](./src/test/java/ShopTest.java)
+[Code](./src/main/java/Shop.java)  | [Tests](./src/test/java/ShopTest.java)
 
 ### Methods
 Method |Description
@@ -79,7 +79,7 @@ Method |Description
 ## <a name="Theater"></a>Theater Class
 The Theater implements the `thingToReview` interface and class takes in a name. The constructor contains the `String name`, `Set nowPlaying` and `List reviews`.
 `Theater newTheater = new Theater(String name);`
-[Code](../src/main/java/Theater.java)  | [Tests](./src/test/java/TheaterTest.java)
+[Code](./src/main/java/Theater.java)  | [Tests](./src/test/java/TheaterTest.java)
 
 ### Methods
 Method |Description
