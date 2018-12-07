@@ -32,7 +32,7 @@ A foray into inheritance. This package contains classes for `Reviews`, `Restaura
 
 ## <a name="thingToReview"></a>thingToReview Interface
 This outlines that anything that is reviewed needs a `.addReview(Review newReview)` method and a `.toString()` method.
-[Code](../../src/main/java/thingToReview.java)
+[Code](./src/main/java/thingToReview.java)
 
 ## <a name="Review"></a>Review Class
 The Review class implements the `thingToReview` interface and takes in the author, body, and star rating of a review. The constructor contains these as `String name`, `String body`, `int stars`, `Object business`, and `String tag`.
