@@ -12,7 +12,6 @@ public class App {
             System.out.println("\t" + arg);
         }
 
-
         //mess with the image
         if (args.length == 0){
             System.out.println("Oops! Something went wrong. Read the docs for more information");
