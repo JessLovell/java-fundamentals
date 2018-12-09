@@ -11,21 +11,32 @@ public class App {
         for (String arg : args) {
             System.out.println("\t" + arg);
         }
-        //find a bitmap
-        Path imagePath = FileSystems.getDefault().getPath("resources", "test.bmp");
-        Path output = FileSystems.getDefault().getPath("resources", "smiley_after.bmp");
 
-        //read the image
-        Bitmap image = new Bitmap(imagePath, output, "something");
 
         //mess with the image
-//        image.flipHorizontally();
-//        image.flipVertically();
-//        image.invert();
-//        image.randomize();
+        if (args.length == 0){
+            System.out.println("Oops! Something went wrong. Read the docs for more information");
+        } else {
+            //find a bitmap
+            Path imagePath = FileSystems.getDefault().getPath("resources", args[0]);
+            Path output = FileSystems.getDefault().getPath("resources", args[1]);
 
+            //read the image
+            Bitmap image = new Bitmap(imagePath, output, args[2]);
 
-        //output the file
-        image.save();
+            if (args[2].equals("flipHorizontally")) {
+                image.flipHorizontally();
+            } else if (args[2].equals("flipVertically")){
+                image.flipVertically();
+            } else if (args[2].equals("invert")) {
+                image.invert();
+            } else if (args[2].equals("randomize")) {
+                image.randomize();
+            } else {
+                System.out.println(args[2] + "is not available.");
+            }
+            //output the file
+            image.save();
+        }
     }
 }
