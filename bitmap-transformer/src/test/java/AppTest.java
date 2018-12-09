@@ -12,7 +12,7 @@ public class AppTest {
     @Test public void testBitmap() {
 
         Path imagePath = FileSystems.getDefault().getPath("resources", "test.bmp");
-        Path output = FileSystems.getDefault().getPath("resources", "test_after.bmp");
+        Path output = FileSystems.getDefault().getPath("resources", "test_test_after.bmp");
         Bitmap bit = new Bitmap(imagePath, output, "invert");
 
         assertTrue("Expect bitmap to have imagePath", bit.imagePath != null);
@@ -27,12 +27,24 @@ public class AppTest {
 
     @Test public void testRandomize() {
 
-        Path imagePath = FileSystems.getDefault().getPath("resources", "smiley.bmp");
-        Path output = FileSystems.getDefault().getPath("resources", "smiley_test_after.bmp");
-        Bitmap bit = new Bitmap(imagePath, output, "invert");
+        Path imagePath = FileSystems.getDefault().getPath("resources", "MARBLES.bmp");
+        Path output = FileSystems.getDefault().getPath("resources", "MARBLES_test_after.bmp");
+        Bitmap bit = new Bitmap(imagePath, output, "randomize");
 
-        
+        int b1 = bit.imageData.getRGB(0,0);
+        int b2 = bit.imageData.getRGB(12,14);
+        int b3 = bit.imageData.getRGB(100,100);
+        int b4 = bit.imageData.getRGB(150,127);
+        int b5 = bit.imageData.getRGB(250,200);
+        bit.randomize();
 
+        assertTrue("expect that the RGB colors don't equal for 5 different pixels",
+                b1 != bit.imageData.getRGB(0,0) ||
+                        b2 != bit.imageData.getRGB(12,14) ||
+                        b3 != bit.imageData.getRGB(100,100) ||
+                        b4 != bit.imageData.getRGB(150,127) ||
+                        b5 != bit.imageData.getRGB(250, 200)
+                );
     }
 
     @Test public void testFlipHorizontally() {
