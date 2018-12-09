@@ -7,10 +7,10 @@ import java.nio.file.Path;
 import java.util.Random;
 
 public class Bitmap {
-    private Path imagePath;
-    private Path outputPath;
-    private String transform;
-    private BufferedImage imageData;
+    protected Path imagePath;
+    protected Path outputPath;
+    protected String transform;
+    protected BufferedImage imageData;
     BufferedImage img = null;
 
     public Bitmap (Path imagePath, Path output, String transform) {

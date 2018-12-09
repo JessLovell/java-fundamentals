@@ -23,13 +23,13 @@ public class App {
             //read the image
             Bitmap image = new Bitmap(imagePath, output, args[2]);
 
-            if (args[2].equals("flipHorizontally")) {
+            if (image.transform == "flipHorizontally") {
                 image.flipHorizontally();
-            } else if (args[2].equals("flipVertically")){
+            } else if (image.transform == "flipVertically"){
                 image.flipVertically();
-            } else if (args[2].equals("invert")) {
+            } else if (image.transform == "invert") {
                 image.invert();
-            } else if (args[2].equals("randomize")) {
+            } else if (image.transform == "randomize") {
                 image.randomize();
             } else {
                 System.out.println(args[2] + "is not available.");
