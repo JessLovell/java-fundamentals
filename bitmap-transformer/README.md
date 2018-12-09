@@ -7,8 +7,17 @@ For this assignment you will be building a bitmap (.bmp) transformer CLI. It wil
 ## User Guide
 1. Clone this repo to your local computer and `cd` into this directory.
 2. To test run `./gradlew test` in the command line to confirm the tests pass.
-3. Type `./gradlew run --args 'input-file output-file transform'` in the commandline.
+3. Type `./gradlew run --args 'input-file output-file transform'` in the command line. See Available Resources for more direction.
 
-Sample Commands
------
+## Available Resources
+
+Transforms: `invert`, `randomize`, `flipHorizontally`, `flipVertically`
+
+
+File | Sample Command
+--- | ----
+MARBLES.bmp | `./gradlew run --args 'MARBLES.bmp MARBLES-after.bmp invert'`
+smiley.bmp |`./gradlew run --args 'smiley.bmp smiley-after.bmp randomize'`
+test.bmp | `./gradlew run --args 'test.bmp test-after.bmp flipHorizontally'`
+
 
