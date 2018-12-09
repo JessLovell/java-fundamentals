@@ -5,6 +5,26 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class AppTest {
-    @Test public void testAppHasAGreeting() {
+    @Test public void testBitmap() {
+    }
+
+    @Test public void testRandomize() {
+
+    }
+
+    @Test public void testFlipHorizontally() {
+
+    }
+
+    @Test public void testFlipVertically() {
+
+    }
+
+    @Test public void testInvert() {
+
+    }
+
+    @Test public void main() {
+        
     }
 }
