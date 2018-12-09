@@ -27,6 +27,12 @@ public class AppTest {
 
     @Test public void testRandomize() {
 
+        Path imagePath = FileSystems.getDefault().getPath("resources", "smiley.bmp");
+        Path output = FileSystems.getDefault().getPath("resources", "smiley_test_after.bmp");
+        Bitmap bit = new Bitmap(imagePath, output, "invert");
+
+        
+
     }
 
     @Test public void testFlipHorizontally() {
