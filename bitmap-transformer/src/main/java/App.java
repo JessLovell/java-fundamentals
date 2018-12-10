@@ -8,10 +8,6 @@ public class App {
 
     public static void main(String[] args) {
 
-        for (String arg : args) {
-            System.out.println("\t" + arg);
-        }
-
         //mess with the image
         if (args.length == 0){
             System.out.println("Oops! Something went wrong. Read the docs for more information");
@@ -25,14 +21,18 @@ public class App {
 
             if (image.transform == "flipHorizontally") {
                 image.flipHorizontally();
+                System.out.println("Success! Your image was flipped horizontally.");
             } else if (image.transform == "flipVertically"){
                 image.flipVertically();
+                System.out.println("Success! Your image was flipped vertically.");
             } else if (image.transform == "invert") {
+                System.out.println("Success! Your image was inverted.");
                 image.invert();
             } else if (image.transform == "randomize") {
+                System.out.println("Success! Your image was randomized.");
                 image.randomize();
             } else {
-                System.out.println(args[2] + "is not available.");
+                System.out.println(args[2] + " is not available.");
             }
             //output the file
             image.save();
