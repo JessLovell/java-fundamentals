@@ -19,16 +19,16 @@ public class App {
             //read the image
             Bitmap image = new Bitmap(imagePath, output, args[2]);
 
-            if (image.transform == "flipHorizontally") {
+            if (args[2].equals("flipHorizontally")) {
                 image.flipHorizontally();
                 System.out.println("Success! Your image was flipped horizontally.");
-            } else if (image.transform == "flipVertically"){
+            } else if (args[2].equals("flipVertically")){
                 image.flipVertically();
                 System.out.println("Success! Your image was flipped vertically.");
-            } else if (image.transform == "invert") {
+            } else if (args[2].equals("invert")) {
                 System.out.println("Success! Your image was inverted.");
                 image.invert();
-            } else if (image.transform == "randomize") {
+            } else if (args[2].equals("randomize")) {
                 System.out.println("Success! Your image was randomized.");
                 image.randomize();
             } else {
