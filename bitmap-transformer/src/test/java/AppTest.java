@@ -48,18 +48,75 @@ public class AppTest {
     }
 
     @Test public void testFlipHorizontally() {
+        Path imagePath = FileSystems.getDefault().getPath("resources", "test.bmp");
+        Path output = FileSystems.getDefault().getPath("resources", "test_test_after.bmp");
+        Bitmap bit = new Bitmap(imagePath, output, "flipHorizontally");
 
+        int b1 = bit.imageData.getRGB(0,0);
+        int b2 = bit.imageData.getRGB(12,14);
+        int b3 = bit.imageData.getRGB(100,100);
+        int b4 = bit.imageData.getRGB(123,123);
+        int b5 = bit.imageData.getRGB(75,75);
+        bit.flipHorizontally();
+
+        assertTrue("expect, 0, 0 to be equal to 0, 123", b1 == bit.imageData.getRGB(0, 123));
+        assertTrue("expect, 12, 14 to be equal to 12, 111", b2 == bit.imageData.getRGB(12, 111));
+        assertTrue("expect, 100, 100 to be equal to 100, 23", b3 == bit.imageData.getRGB(100, 23));
+        assertTrue("expect, 123, 123 to be equal to 123, 0", b4 == bit.imageData.getRGB(123, 0));
+        assertTrue("expect, 75, 75 to be equal to 75, 48", b5 == bit.imageData.getRGB(75, 48));
     }
 
     @Test public void testFlipVertically() {
+        Path imagePath = FileSystems.getDefault().getPath("resources", "test.bmp");
+        Path output = FileSystems.getDefault().getPath("resources", "test_test_after.bmp");
+        Bitmap bit = new Bitmap(imagePath, output, "flipVertically");
 
+        int b1 = bit.imageData.getRGB(0,0);
+        int b2 = bit.imageData.getRGB(12,14);
+        int b3 = bit.imageData.getRGB(100,100);
+        int b4 = bit.imageData.getRGB(123,123);
+        int b5 = bit.imageData.getRGB(75,75);
+        bit.flipVertically();
+
+        assertTrue("expect, 0, 0 to be equal to 123, 0", b1 == bit.imageData.getRGB(123, 0));
+        assertTrue("expect, 12, 14 to be equal to 111, 14", b2 == bit.imageData.getRGB(111, 14));
+        assertTrue("expect, 100, 100 to be equal to 23, 100", b3 == bit.imageData.getRGB(23, 100));
+        assertTrue("expect, 123, 123 to be equal to 0, 123", b4 == bit.imageData.getRGB(0, 123));
+        assertTrue("expect, 75, 75 to be equal to 48, 75", b5 == bit.imageData.getRGB(48, 75));
     }
 
     @Test public void testInvert() {
+        Path imagePath = FileSystems.getDefault().getPath("resources", "test.bmp");
+        Path output = FileSystems.getDefault().getPath("resources", "test_test_after.bmp");
+        Bitmap bit = new Bitmap(imagePath, output, "invert");
+
+        int b1 = bit.imageData.getRGB(0,0);
+        int b2 = bit.imageData.getRGB(12,14);
+        int b3 = bit.imageData.getRGB(100,100);
+        int b4 = bit.imageData.getRGB(123,123);
+        int b5 = bit.imageData.getRGB(75,75);
+        bit.invert();
+
+        assertTrue("expect, 0, 0 to not equal to 0,0", b1 != bit.imageData.getRGB(0, 0));
+        assertTrue("expect, 12,14 to not equal to 12,14", b2!= bit.imageData.getRGB(12,14));
+        assertTrue("expect, 100, 100 to not equal to 100,100", b3 != bit.imageData.getRGB(100, 100));
+        assertTrue("expect, 123, 123 to not equal to 123,123", b4 != bit.imageData.getRGB(123, 123));
+        assertTrue("expect, 75,75 to not equal to 75, 75", b5 != bit.imageData.getRGB(75,75));
+    }
+
+    @Test public void testSave() {
+
+        Path imagePath = FileSystems.getDefault().getPath("resources", "test.bmp");
+        Path output = FileSystems.getDefault().getPath("resources", "test_test_after.bmp");
+        Bitmap bit = new Bitmap(imagePath, output, "invert");
+
+        assertTrue("Expect true for save", bit.save()); //see file created
+        assertEquals("expect to be equal", true, bit.save());
+    }
+
+    @Test public void testMain() {
 
     }
 
-    @Test public void main() {
 
-    }
 }
