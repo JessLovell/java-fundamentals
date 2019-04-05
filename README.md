@@ -1,10 +1,11 @@
 # java-fundamentals
+This is a forary into the fundaments of Java. 
 
 ## Week 1
-- Basics: Java methods and while loops  
-- Basic Library: Creating tests to ensure methods are working. Fix the last method
-- Bitmap Transfer: A method to transfrom an input bitmap image
-- Linter: A method to read missing ";" in java code. 
+- [Basics:](./basics/Main.java) Java methods and while loops  
+- [Basic Library:](./basiclibrary) Creating tests to ensure methods are working. Fix the last method
+- [Bitmap Transfer:](./bitmap-transformer) A method to transfrom an input bitmap image
+- [Linter:](./linter) A method to read missing ";" in java code. 
 
 ## Week 2
 - [Inheritance:](./inheritance/README.md) Creating and linking classes together using interfaces or superclasses
