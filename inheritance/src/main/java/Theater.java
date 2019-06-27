@@ -3,44 +3,26 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-public class Theater implements thingToReview{
+public class Theater extends Business{
 
-    protected String name;
     protected Set<String> nowPlaying;
-    protected List<Review> reviews;
 
-    public Theater(String name){
-        this.name = name;
+    public Theater(String name, String location, String description){
+        super(name, location, description);
         this.nowPlaying = null;
-        this.reviews = null;
     }
 
     //this method prints out the theater instance as a string
     @Override
     public String toString() {
         if (nowPlaying == null) {
-            return this.name + " is not playing any movies";
+            return this.getName() + " is not playing any movies";
         }
-        return this.name + " is playing " + this.nowPlaying;
-    }
-
-    //this method adds a reivew to a specific instance of a theater
-    @Override
-    public void addReview(Review newReview) {
-
-        //check if the list is empty
-        if (this.reviews == null) {
-            List<Review> movieList = new LinkedList<>();
-            movieList.add(newReview);
-            this.reviews = movieList;
-        } else {
-            this.reviews.add(newReview);
-        }
-        newReview.business = this;
+        return this.getName() + " is playing " + this.nowPlaying;
     }
 
     //This review adds a review about a specifc movie
-    public void addReview(Review newReview, String movie){
+    public void addMovieReview(Review newReview, String movie){
         addReview(newReview);
         newReview.tag = movie; //adds the movie as a tag to the review
     }

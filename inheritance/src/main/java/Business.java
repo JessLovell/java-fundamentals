@@ -9,31 +9,6 @@ public abstract class Business {
     private String description;
     private int rating;
 
-    public Business(){
-        this.name = "Unknown Business";
-        this.location = "Undisclosed location";
-        this.reviews = new LinkedList<>();
-        this.description = "No description";
-        this.rating = 0;
-    }
-
-    public Business(Business business){
-        this.name = name;
-        this.location = location;
-        this.reviews = reviews;
-        this.description = description;
-        this.rating = rating;
-        updateRating();
-    }
-
-    public Business(String name){
-        this.name = name;
-        this.location = location;
-        this.reviews = new LinkedList<>();
-        this.description = description;
-        this.rating = 0;
-    }
-
     public Business(String name, String location, String description){
         this.name = name;
         this.location = location;
