@@ -4,18 +4,13 @@ import java.util.List;
 /*
  *
  */
-public class Restaurant implements thingToReview {
+public class Restaurant extends Business {
 
-    protected String name;
-    protected int stars;
-    protected String price;
-    protected List<Review> reviews;
+    private String price;
 
     public Restaurant (String name, String price) {
-        this.name = name;
-        this.stars = 0;
+        super(name);
         this.price = price;
-        this.reviews = null;
     }
 
     // Method toString outputs the name, rating, and price of a restaurant
